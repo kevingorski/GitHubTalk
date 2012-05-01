@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Git &amp; GitHub Best Practices</title>
+	
+	<meta name="description" content="Git &amp; GitHub Best Practices">
+	<meta name="author" content="Kevin Gorski">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<link rel="stylesheet" href="core/deck.core.css">
+	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="extensions/status/deck.status.css">
+	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="extensions/codemirror/deck.codemirror.css">
+	<link rel="stylesheet" href="extensions/codemirror/themes/default.css">
+	
+	<link rel="stylesheet" id="transition-theme-link" href="themes/transition/horizontal-slide.css">
+	<link rel="stylesheet" id="custom-theme-link" href="custom.css">
+	
+	<script src="modernizr.custom.js"></script>
+	<script type="text/javascript" src="http://use.typekit.com/tcy2nuw.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body class="deck-container">
+
+
+<section class="slide" id="title-slide">
+	<h1>Git &amp; GitHub Best Practices</h1>
+</section>
+
+<section class="slide">
+	<h2>Understand Git Basics</h2>
+	<ul>
+		<li>Commits</li>
+		<li>Branches</li>
+		<li>Tags</li>
+		<li>Remotes</li>
+		<li>Pushing</li>
+		<li>Fetching</li>
+		<li>Merging</li>
+		<li>Pulling</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Use the Command Line</h2>
+	<ul>
+		<li>Same across OS/machines</li>
+		<li>Scriptable</li>
+		<li>Build your own workflow</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>When In Doubt, Branch</h2>
+	<ul>
+		<li>Branches are cheap &amp; useful</li>
+		<li>Short-lived
+			<ul>
+				<li>Per feature</li>
+				<li>Dependency isolation</li>
+				<li><abbr>POC</abbr>s</li>
+			</ul>
+		</li>
+		<li>Long-lived
+			<ul>
+				<li>Environment</li>
+				<li>Large-scale refactoring</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>One Thing Per Public Commit</h2>
+	<ul>
+		<li>Bugfix</li>
+		<li>Story implementation</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Squash Your Way To Simple Commits</h2>
+	<ul>
+		<li>Quick work: Collapse all commits into one
+			<ul>
+				<li><code>(master) $> git merge --squash LocalBranch</code></li>
+				<li>No history of merge, so branch is ready to be deleted</li>
+			</ul>
+		</li>
+		<li>Larger work: Rebase to selectively combine commits
+			<ul>
+				<li><code>(FeatureBranch) $> git rebase --interactive master</code></li>
+				<li><code>(master) $> git rebase -i HEAD~4</code><span class="Warning">*</span></li>
+			</ul>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Standard Rebase Warning</h2>
+	<ul>
+		<li>Do not rebase commits that you have pushed to a public repository</li>
+		<li>When you rebase, you're abandoning existing commits and creating new ones that are similar but different</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Know What Simple Rebasing Does</h3>
+	<ul>
+		<li>Roll back to common ancestor</li>
+		<li>Re-apply all changes from first branch's snapshots</li>
+		<li>Re-apply all changes from second branch's snapshots</li>
+		<li>(There are more steps in advanced rebasing)</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Use Pull Requests As Discussions</h2>
+	<ul>
+		<li>You don't need a fork to have a pull request</li>
+		<li>Can be used whenever working with branches</li>
+		<li>Line-by-line code review &amp; discussions</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Share More With Git</h2>
+	<ul>
+		<li>Dot files</li>
+		<li>Deployment scripts</li>
+		<li>Documentation</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>READMEs</h2>
+	<ul>
+		<li>Render Markdown, textile, RDoc, others</li>
+		<li>Include images, code samples</li>
+		<li><a href="http://github.wvrgroup.internal/Instant-Software/Akira">Example</a></li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>EOF</h2>
+	<img src="Octocat.png" />
+</section>
+
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="number" name="slidenum" id="goto-slide">
+	<input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<script src="jquery-1.7.min.js"></script>
+<script src="jquery.lettering-0.6.1.min.js"></script>
+<script src="jquery.slabtext.min.js"></script>
+
+<!-- Deck Core and extensions -->
+<script src="core/deck.core.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/hash/deck.hash.js"></script>
+<!-- Base codemiror code -->
+<script src="extensions/codemirror/codemirror.js"></script>
+
+<!-- Syntax highlighting Modes -->
+
+<!-- javascript -->
+<script src="extensions/codemirror/mode/javascript/javascript.js"></script>
+
+<!-- html mode (note html mode requires xml, css and javascript) -->
+<script src="extensions/codemirror/mode/xml/xml.js"></script>
+<script src="extensions/codemirror/mode/css/css.js"></script>
+<script src="extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+<!-- Plugin code -->
+<script src="extensions/codemirror/deck.codemirror.js"></script>
+
+<!-- Specific to this page -->
+<script>
+$(function() {
+	$.deck('.slide');
+
+	$('#title-slide h1').slabText();
+});
+</script>
+
+</body>
+</html>

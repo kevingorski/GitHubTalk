@@ -1,0 +1,116 @@
+/* For SlabText */
+.slabtexted .slabtext
+        {
+        display:-moz-inline-box;
+        display:inline-block
+        white-space:nowrap;
+        }
+.slabtextinactive .slabtext
+        {
+        display:inline;
+        white-space:normal;
+        font-size:1em !important;
+        letter-spacing:inherit !important;
+        word-spacing:inherit !important;
+        *letter-spacing:0 !important;
+        *word-spacing:0 !important;
+        }
+.slabtextdone .slabtext
+        {
+        display:block
+        }
+
+/* Actual customization */
+
+body {
+	background-image: url('themes/little_pluses.png');
+}
+
+.deck-container .deck-status {
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 0.5em;
+	color: #f33;
+	font-weight: bold;
+	padding: 1em;
+	text-align: right;
+	width: 3.5em;
+}
+
+section.slide { 
+	background-color: white;
+	background-image: url('themes/grid_noise.png');
+	border-radius: 1em;
+	box-shadow: 4px 4px 5px 6px #999;
+	margin: 1em 0;
+	min-height: 95%;
+}
+
+#title-slide h1 {
+	color: #4183C4;
+	font-family: "quatro-slab",serif;
+	text-shadow: 0.025em 0.025em black;
+}
+
+.slide blockquote {
+	border: thin solid #777;
+	border-left: 1em solid #777;
+	box-shadow: 0 0 5px #777;
+	padding-top: 1em;
+}
+
+.slide cite {
+	font-style: italic;
+}
+
+.slide blockquote p,
+.slide blockquote ul {
+	padding: 0 1em;
+}
+
+.slide blockquote .attribution {
+	background-color: hsla(53, 34%, 50%, 0.5);
+	padding: 1em;
+}
+
+/* Sizing */
+body.deck-container {
+	font-size: 24px;
+}
+
+.slide h1 {
+	font-size: 4.5em;
+}
+
+.slide h2 {
+	font-size: 2.25em;
+}
+
+/* Custom Fonts */
+.slide h1,
+.slide h2,
+.deck-container .deck-status {
+	font-family: "crete-rounded-web",sans-serif;
+}
+
+.deck-container .slide {
+	font-family: "superclarendon",sans-serif;
+}
+
+
+@-webkit-keyframes pulse {
+    0% {
+		-webkit-transform: rotate(0deg);
+	}
+    50% {
+		-webkit-transform: rotate(360deg);
+	}
+    100% {
+		-webkit-transform: rotate(0deg);
+	}
+}
+
+.Warning {
+	color: Red;
+	display: inline-block;
+	-webkit-animation: pulse 1.25s infinite ease-in-out;
+}
