@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Git &amp; GitHub Best Practices</title>
+	<title>GitHub Best Practices</title>
 	
 	<meta name="description" content="Git &amp; GitHub Best Practices">
 	<meta name="author" content="Kevin Gorski">
@@ -34,7 +34,7 @@
 
 
 <section class="slide" id="title-slide">
-	<h1>Git &amp; GitHub Best Practices</h1>
+	<h1>GitHub Best Practices</h1>
 </section>
 
 <section class="slide">
@@ -52,35 +52,6 @@
 </section>
 
 <section class="slide">
-	<h2>Use the Command Line</h2>
-	<ul>
-		<li>Same across OS/machines</li>
-		<li>Scriptable</li>
-		<li>Build your own workflow</li>
-	</ul>
-</section>
-
-<section class="slide">
-	<h2>When In Doubt, Branch</h2>
-	<ul>
-		<li>Branches are cheap &amp; useful</li>
-		<li>Short-lived
-			<ul>
-				<li>Per feature</li>
-				<li>Dependency isolation</li>
-				<li><abbr>POC</abbr>s</li>
-			</ul>
-		</li>
-		<li>Long-lived
-			<ul>
-				<li>Environment</li>
-				<li>Large-scale refactoring</li>
-			</ul>
-		</li>
-	</ul>
-</section>
-
-<section class="slide">
 	<h2>One Thing Per Public Commit</h2>
 	<ul>
 		<li>Bugfix</li>
@@ -89,47 +60,31 @@
 </section>
 
 <section class="slide">
-	<h2>Squash Your Way To Simple Commits</h2>
+	<h2>When In Doubt, Branch</h2>
 	<ul>
-		<li>Quick work: Collapse all commits into one
+		<li>Branches are cheap &amp; useful</li>
+		<li class="slide">Short&ndash;lived
 			<ul>
-				<li><code>(master) $> git merge --squash LocalBranch</code></li>
-				<li>No history of merge, so branch is ready to be deleted</li>
+				<li>Per feature</li>
+				<li>Dependency isolation</li>
+				<li><abbr>POC</abbr>s</li>
 			</ul>
 		</li>
-		<li>Larger work: Rebase to selectively combine commits
+		<li class="slide">Long&ndash;lived
 			<ul>
-				<li><code>(FeatureBranch) $> git rebase --interactive master</code></li>
-				<li><code>(master) $> git rebase -i HEAD~4</code><span class="Warning">*</span></li>
+				<li><a href="http://github.wvrgroup.internal/Instant-Software/Isis">Environment</a></li>
+				<li><a href="http://github.wvrgroup.internal/Instant-Software/Leelu">Large&ndash;scale refactoring</a></li>
 			</ul>
 		</li>
-	</ul>
-</section>
-
-<section class="slide">
-	<h2>Standard Rebase Warning</h2>
-	<ul>
-		<li>Do not rebase commits that you have pushed to a public repository</li>
-		<li>When you rebase, you're abandoning existing commits and creating new ones that are similar but different</li>
-	</ul>
-</section>
-
-<section class="slide">
-	<h2>Know What Simple Rebasing Does</h3>
-	<ul>
-		<li>Roll back to common ancestor</li>
-		<li>Re-apply all changes from first branch's snapshots</li>
-		<li>Re-apply all changes from second branch's snapshots</li>
-		<li>(There are more steps in advanced rebasing)</li>
 	</ul>
 </section>
 
 <section class="slide">
 	<h2>Use Pull Requests As Discussions</h2>
 	<ul>
-		<li>You don't need a fork to have a pull request</li>
-		<li>Can be used whenever working with branches</li>
-		<li>Line-by-line code review &amp; discussions</li>
+		<li>You don&rsquo;t need a fork to have a pull request</li>
+		<li>Can be used whenever working with public branches</li>
+		<li>Line&ndash;by&ndash;line code review &amp; discussions</li>
 	</ul>
 </section>
 
